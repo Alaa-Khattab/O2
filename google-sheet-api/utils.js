@@ -7,13 +7,10 @@ function parseBody(req, callback) {
     var body = '';
     req.on('data', function(data) {
         body += data;
-        console.log("123");
     });
     req.on('end', function() {
     	var id1 = JSON.stringify(id);
         var body1 = qs.parse(body);
-        
-        
         var source = {
             "range": "Sheet1",
             "majorDimension": "ROWS",

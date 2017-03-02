@@ -1,6 +1,7 @@
 var router = require('./google-sheet-api/router.js');
 
 module.exports = function mainHandler(req, res) {
+  console.log(req.url);
 	var path = req.url.split('?')[0];
   	var route = `${req.method} ${path}`;
    	// var path = req.method + ' ' + req.url;

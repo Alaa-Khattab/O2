@@ -30,7 +30,7 @@ function readsheet(cb) {
   var req = https.request(opts, (res) => {
     var store = '';
     res.on('data', (chunk) => store = store + chunk);
-    res.on('end', () => cb(undefined , qs.parse(store)));
+    res.on('end', () => cb(undefined , store));
   });
   req.end();
 });
@@ -38,3 +38,8 @@ function readsheet(cb) {
 module.exports = {
   readsheet:readsheet
 }
+console.log(readsheet(function(err, dtat){
+  console.log(dtat.values);
+
+})
+)
